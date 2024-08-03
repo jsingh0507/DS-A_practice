@@ -112,3 +112,25 @@ def divide(dividend, divisor)
 
    is_positive ? result : -1 * result
 end
+
+def is_valid(s)
+    brackets = []
+    
+    s.chars.each do |c|
+        if c == '(' || c == '{' || c == '['
+            brackets.push(c)
+        else
+            if brackets.empty?
+                return false  # There's no matching open bracket.
+            end
+            
+            open_bracket = brackets.pop
+            
+            if (c == ')' && open_bracket != '(') || (c == '}' && open_bracket != '{') || (c == ']' && open_bracket != '[')
+                return false  # Mismatched closing bracket.
+            end
+        end
+    end
+    
+    brackets.empty?  # All open brackets should be closed.
+end
