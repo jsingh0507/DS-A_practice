@@ -70,3 +70,15 @@ class Solution {
         return k;
     }
 }
+
+#gourp anagram with ruby
+
+def group_anagrams(strs)
+    hash =  Hash.new { |hash, key| hash[key] = [] }
+
+    strs.each do |word|
+        hash[word.split("").sort.join("")]<<word
+    end
+
+    return hash.values
+end
