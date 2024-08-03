@@ -53,3 +53,20 @@ class Solution {
         return k+1;
     }
 }
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if(nums.length==2){
+            return nums.length;
+        }
+        int k=2;
+        int i=2;
+        for(i=2;i<nums.length;i++){
+            if(nums[i]!=nums[k-2]){
+                nums[k]=nums[i];
+                k++;
+            }
+        }
+        return k;
+    }
+}
