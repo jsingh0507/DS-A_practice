@@ -82,3 +82,33 @@ def group_anagrams(strs)
 
     return hash.values
 end
+
+def divide(dividend, divisor)
+   # 0 <= r < b and a = b * q + r
+   return 1 if dividend == divisor
+
+   max_int = 2147483647
+   is_positive = (dividend < 0 == divisor < 0)
+   a = dividend.abs
+   b = divisor.abs
+   result = 0
+
+   while(a >= b)
+     q = 0
+
+     while(a > (b << (q + 1)))
+       q += 1
+     end
+
+     result += (1 << q)
+     a = a - (b << q)
+   end
+
+   result = if (result > max_int && is_positive)
+           max_int
+         else
+           result
+         end
+
+   is_positive ? result : -1 * result
+end
