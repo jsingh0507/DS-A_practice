@@ -156,3 +156,17 @@ def length_of_longest_substring(s)
 
   max_length
 end
+
+# Integer to roman
+def int_to_roman(num)
+    alphas = %w[I IV V IX X XL L XC C CD D CM M]
+    alpha_values = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000]
+    ans = ""
+    alphas.zip(alpha_values).reverse.each_with_index do |alpha_value, index|
+      while num >= alpha_value[1]
+        ans << alpha_value[0]
+        num -= alpha_value[1]
+      end
+    end
+    ans
+end
