@@ -246,3 +246,21 @@ def set_zeroes(matrix)
 
     matrix
 end
+
+#word-break
+def word_break(s, word_dict)
+    queue = [s]
+    h = Hash.new(false)
+    while queue.length > 0
+        word = queue.shift
+        next if h[word]
+        return true if word == "" || word == nil
+        h[word] = true
+        word_dict.each do |w|
+            if word.start_with?(w)
+                queue.push(word[w.length..])
+            end
+        end
+    end
+    return false
+end
