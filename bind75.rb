@@ -134,3 +134,25 @@ def is_valid(s)
     
     brackets.empty?  # All open brackets should be closed.
 end
+
+# sustring with no repeated chars using set
+
+def length_of_longest_substring(s)
+    return 0 if s.empty?
+    return 0 if s.empty?
+
+  char_set = Set.new
+  left = 0
+  max_length = 0
+
+  s.each_char.with_index do |char, right|
+    while char_set.include?(char)
+      char_set.delete(s[left])
+      left += 1
+    end
+    char_set.add(char)
+    max_length = [max_length, char_set.length].max
+  end
+
+  max_length
+end
