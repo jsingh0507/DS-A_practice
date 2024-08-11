@@ -192,3 +192,57 @@ def letter_combinations(digits)
     backtrack("", digits, phone_map, output)
     output
 end
+
+#set-matrix-zeros
+def set_zeroes(matrix)
+    first_row_zero = false
+    first_column_zero = false
+
+    matrix.first.size.times do |j|
+        first_row_zero = true if matrix[0][j] == 0
+    end
+
+    matrix.size.times do |i|
+        first_column_zero = true if matrix[i][0] == 0
+    end
+
+    # check for rest of the matrix for zeros
+    # store the zeros in the first row and first columns
+    1.upto(matrix.size - 1) do |i|
+        1.upto(matrix.first.size - 1) do |j|
+            if matrix[i][j] == 0
+                matrix[0][j] = 0
+                matrix[i][0] = 0
+            end
+        end
+    end
+
+    # set rows zero if first column has zero in its cell
+    1.upto(matrix.size - 1) do |i|
+        if matrix[i][0] == 0
+            matrix[i].map!{0}
+        end
+    end
+
+    # set columns zero if first row has zero in its cell
+    1.upto(matrix.first.size - 1) do |j|
+        if matrix[0][j] == 0
+            1.upto(matrix.size - 1) do |i|
+                matrix[i][j] = 0
+            end
+        end
+    end
+
+    # if first row was having zero before
+    if first_row_zero
+        matrix[0].map!{0}
+    end
+
+    if first_column_zero
+        0.upto(matrix.size - 1) do |i|
+            matrix[i][0] = 0
+        end
+    end
+
+    matrix
+end
