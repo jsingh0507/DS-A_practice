@@ -296,4 +296,24 @@ def top_k_frequent(nums, k)
     return ans
 end
 
-
+#product expcet itself exceeding time limit trying to find better solution with same approach but different usage
+def product_except_self(nums)
+    hash = {}
+    res = []
+    nums.each.with_index do |val, i|
+        hash[i]=val
+    end
+    i=0
+    res =[]
+    while i<nums.length
+        prod = 1
+        hash.each do |h,k|
+            if i!=h
+                prod*=k
+            end
+        end
+        res << prod
+        i+=1
+    end 
+    return res
+end
