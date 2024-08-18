@@ -276,5 +276,24 @@ def group_anagrams(strs)
     return group.values
 end
 
+#top k frequen element with hash O(n)
+
+def top_k_frequent(nums, k)
+    hash = Hash.new {|h,k| h[k]=0}
+
+    nums.each do |num|
+        hash[num]+=1
+    end
+
+    res = hash.sort_by {|k,v| v}.reverse
+    ans = []
+    i=0
+    while k>0
+        ans << res[i][0]
+        i+=1
+        k-=1
+    end
+    return ans
+end
 
 
