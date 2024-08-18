@@ -339,3 +339,14 @@ def longest_consecutive(nums)
 
     result
 end
+
+#is_palindrome still working on it 
+def is_palindrome(s)
+    f = s.split(",").join("")
+    r = f.split(" ").join("")
+    if r.upcase == r.upcase.reverse
+        return true
+    else 
+        return false
+    end
+end
