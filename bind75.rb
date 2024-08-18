@@ -317,3 +317,25 @@ def product_except_self(nums)
     end 
     return res
 end
+
+#longest consecutive sequence ex. 1,2,3,4 from [1,10,2,3,9,4]
+
+def longest_consecutive(nums)
+    return 0 if nums.length == 0
+
+    nums = nums.sort
+
+    result = counter = 0
+
+    for i in 0...nums.length
+        next if nums[i + 1] == nums[i]
+        if (nums[i] + 1) == nums[i+1]
+            counter += 1
+        else
+            result =  counter + 1 if result < (counter + 1)
+            counter = 0
+        end
+    end
+
+    result
+end
