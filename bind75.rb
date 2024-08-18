@@ -264,3 +264,17 @@ def word_break(s, word_dict)
     end
     return false
 end
+
+#group_anagram refactored with hash
+def group_anagrams(strs)
+    group = Hash.new {|key, val| key[val]=[]}
+
+    strs.each do |word|
+        group[word.chars.sort.join] << word
+    end
+
+    return group.values
+end
+
+
+
