@@ -370,3 +370,31 @@ def is_valid(s)
     end
     return stack.empty?
 end
+
+#binary search used to find min value rotated array
+
+def find_min(nums)
+    n = nums.length
+    left = 0
+    right = n - 1
+    min = nums[0]
+
+    while left <= right
+        # if the array is sorted and not rotated
+        if nums[left] < nums[right]
+            min = [min, nums[left]].min
+            break
+        end
+
+        mid = (left + right) / 2
+        min = [min, nums[mid]].min
+
+        # left sorted portion
+        if nums[mid] >= nums[left] # equal to because mid could be the left
+            left = mid + 1 # smaller values will be on the right after rotation
+        else
+            right = mid - 1
+        end
+    end
+    min
+end
