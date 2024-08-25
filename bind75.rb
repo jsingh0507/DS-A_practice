@@ -432,3 +432,30 @@ def num_islands(grid)
     end
     return count
 end
+#search in rotated array using binary search tree
+def search(nums, target)
+    return -1 if nums.empty?
+    
+    left = 0
+    right = nums.size - 1
+    while left <= right
+        mid = (left + right) / 2
+        if nums[mid] == target
+            return mid
+        end
+        if nums[mid] >= nums[left]
+            if target >= nums[left] && target < nums[mid]
+                right = mid - 1
+            else
+                left = mid + 1
+            end
+        else
+            if target <= nums[right] && target > nums[mid]
+                left = mid + 1
+            else
+                right = mid - 1
+            end
+        end
+    end
+    -1
+end
