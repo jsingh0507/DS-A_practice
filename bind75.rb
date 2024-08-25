@@ -459,3 +459,17 @@ def search(nums, target)
     end
     -1
 end
+
+#reverse linked list 
+
+def reverse_list(head)
+    prev = nil
+    temp = nil
+    while head do
+        prev = head
+        head = head.next
+        prev.next = temp
+        temp = prev
+    end
+    prev
+end
