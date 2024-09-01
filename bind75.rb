@@ -473,3 +473,17 @@ def reverse_list(head)
     end
     prev
 end
+
+#maxium subarray 
+
+def max_sub_array(nums)
+    max_sum = nums[0]
+    curr_sum = 0
+
+    nums.each do |num|
+        curr_sum += num
+        max_sum = [max_sum, curr_sum].max
+        curr_sum = 0 if curr_sum < 0
+    end
+    max_sum
+end
