@@ -487,3 +487,22 @@ def max_sub_array(nums)
     end
     max_sum
 end
+
+#jump game
+
+def can_jump(nums)
+    max_reach = 0
+    last_index = nums.length - 1
+  
+    (0..last_index).each do |i|
+      max_reach = [max_reach, i + nums[i]].max
+  
+      if max_reach >= last_index
+        return true
+      elsif max_reach <= i && nums[i] == 0
+        return false
+      end
+    end
+  
+    return false
+end
