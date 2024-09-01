@@ -516,3 +516,22 @@ def hamming_weight(n)
     end
     count
 end
+
+#counting bits
+def count_bits(n)
+    ans = [0]
+
+    end_of_while_loop = n + 1
+    index = 1
+    prev_num = 0
+    while index < end_of_while_loop
+        # Convert index to string.
+        string_binary = index.to_s(2)
+        # Add number of 1s to ans.
+        ans << string_binary.count("1")
+
+        index = index + 1
+    end
+
+    ans
+end
