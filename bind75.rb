@@ -506,3 +506,13 @@ def can_jump(nums)
   
     return false
 end
+
+#Number of 1 bits
+def hamming_weight(n)
+    count = 0
+    while n != 0
+      count += 1 if n & 1 == 1  # Check the last bit
+      n >>= 1  # Right shift to move to the next bit
+    end
+    count
+end
