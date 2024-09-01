@@ -535,3 +535,9 @@ def count_bits(n)
 
     ans
 end
+
+#Reverse bits
+def reverse_bits(n)
+    n = n.to_s(2)
+    (("0" * (32-n.length)) + n).reverse.to_i(2)
+end
