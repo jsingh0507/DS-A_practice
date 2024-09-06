@@ -541,3 +541,17 @@ def reverse_bits(n)
     n = n.to_s(2)
     (("0" * (32-n.length)) + n).reverse.to_i(2)
 end
+
+#Best Time to Buy and Sell Stock II
+def max_profit(prices)
+    max = 0
+    start = prices[0]
+    len1 = prices.length() - 1
+    for i in 0..len1 do
+        if start < prices[i] 
+            max += prices[i] - start
+        end
+        start = prices[i]
+    end
+    return max
+end
