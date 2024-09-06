@@ -603,3 +603,37 @@ def int_to_roman(integer)
 
   roman
 end
+
+
+#zigzag conversation
+def convert(s, num_rows)
+    map = Array.new
+    col = 0
+    row = 0
+    
+    forward = false
+    (0 .. (s.length-1)).each do |x|
+      map[row] ||= []
+      map[row][col] = s[x]
+      
+      if row == (num_rows - 1) || (row == 0)
+        forward = !forward   
+      end
+    
+      if forward 
+        row += 1
+      else
+        row -= 1
+        col += 1
+      end
+    end
+    
+    
+  
+    result = ''
+    map.each do |row| 
+      result << row.join  
+    end
+  
+    return result
+  end
