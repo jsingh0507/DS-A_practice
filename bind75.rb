@@ -637,3 +637,29 @@ def convert(s, num_rows)
   
     return result
   end
+
+# three some
+def three_sum(nums)
+    nums.sort!
+    result = []
+    (0...nums.length - 2).each do |i|
+        if i > 0 && nums[i] == nums[i - 1]
+            next
+        end
+        j = i+1
+        k = nums.length - 1
+        while j < k
+        sum = nums[i] + nums[j] + nums[k]
+            if sum == 0
+                result << [nums[i], nums[j], nums[k]]
+                j += 1
+                k -= 1
+            elsif sum < 0
+                j += 1
+            else
+                k -= 1
+            end
+        end
+    end
+    result.uniq
+end
