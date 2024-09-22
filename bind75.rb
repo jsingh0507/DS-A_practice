@@ -795,3 +795,16 @@ public String longestCommonPrefix(String[] strs) {
         }
         return s1.substring(0, idx);
 }
+
+# Remove Duplicates from Sorted Array
+public int removeDuplicates(int[] arr) {
+        int i=0;
+        for(int j=1;j<arr.length;j++){
+            if(arr[i]!=arr[j]){
+                i++;
+                arr[i]=arr[j];
+            }
+        }
+        return i+1;
+        
+}
