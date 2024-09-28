@@ -845,3 +845,4 @@ public int searchInsert(int[] nums, int target) {
         if(target > value) return search(nums, target, mid + 1, end, closestIndex);
         return search(nums, target, start, mid, closestIndex);
 }
+
