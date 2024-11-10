@@ -1,5 +1,6 @@
-//add two numbers
+
 class Solution {
+    //add two numbers
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummyHead = new ListNode(0);
         ListNode tail = dummyHead;
@@ -24,5 +25,28 @@ class Solution {
         ListNode result = dummyHead.next;
         dummyHead.next = null;
         return result;
+    }
+
+    //longest substring in a sring
+    public int lengthOfLongestSubstring(String s) {
+        int n = s.length();
+        int maxLength = 0;
+        Set<Character> charSet = new HashSet<>();
+        int left = 0;
+        
+        for (int right = 0; right < n; right++) {
+            if (!charSet.contains(s.charAt(right))) {
+                charSet.add(s.charAt(right));
+                maxLength = Math.max(maxLength, right - left + 1);
+            } else {
+                while (charSet.contains(s.charAt(right))) {
+                    charSet.remove(s.charAt(left));
+                    left++;
+                }
+                charSet.add(s.charAt(right));
+            }
+        }
+        
+        return maxLength;
     }
 }
