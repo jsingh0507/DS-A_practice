@@ -844,6 +844,8 @@ public int searchInsert(int[] nums, int target) {
         if(value == target) return mid;
         if(target > value) return search(nums, target, mid + 1, end, closestIndex);
         return search(nums, target, start, mid, closestIndex);
+
+        
 }
 
 
