@@ -91,5 +91,22 @@ element
     }
 
 }
+//Diffeent types of locators:
+
+WebElement newCertification = driver.findElement(By.linkText("Cypress 101"));
+
+WebElement findviaBelow = driver.findElement(with(By.tagName("h4")).below(newCertification));   
+System.out.println("fetched via Below : "+findviaBelow.getText());
+
+WebElement fetchviaToTheRight = driver.findElement(with(By.tagName("h4")).toRightOf(findviaBelow));
+
+System.out.println("fetch via ToTheRight :"+fetchviaToTheRight.getText());
+
+WebElement fetchviaabove = driver.findElement(with(By.tagName("h4")).above(fetchviaToTheRight));  
+System.out.println("fetch via above : "+fetchviaabove.getText());
+
+WebElement fetchviatoLeftOf=driver.findElement(with(By.tagName("h4")).toLeftOf(fetchviaabove));
+System.out.println("fetched via toLeftOf :  "+fetchviatoLeftOf.getText());
+
 
 }
