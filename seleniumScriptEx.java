@@ -36,3 +36,29 @@ public class FindElementByIdAndClick {
         driver.quit();
     }
 }
+
+public class FillOutForm {
+    public static void main(String[] args) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://example.com/form"); // Replace with the actual form URL
+        
+        // Fill in text fields
+        driver.findElement(By.name("username")).sendKeys("testuser");
+        driver.findElement(By.name("password")).sendKeys("password123");
+        
+        // Click the submit button (assumed to have ID "submit-button")
+        driver.findElement(By.id("submit-button")).click();
+        
+        Thread.sleep(2000); // Wait for the form submission response
+        
+        String successMessage = driver.findElement(By.id("success")).getText();
+        if (successMessage.contains("Thank you")) {
+            System.out.println("Form submitted successfully.");
+        } else {
+            System.out.println("Form submission failed!");
+        }
+        
+        driver.quit();
+    }
+}
