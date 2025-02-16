@@ -62,3 +62,18 @@ public class FillOutForm {
         driver.quit();
     }
 }
+
+public class ExplicitWaitExample {
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://example.com/dynamic"); // Replace with your target URL
+        
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement dynamicElement = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.id("dynamicElement")));
+        
+        System.out.println("Dynamic element is now visible!");
+        driver.quit();
+    }
+}
