@@ -77,3 +77,24 @@ public class ExplicitWaitExample {
         driver.quit();
     }
 }
+
+public class DropdownExample {
+    public static void main(String[] args) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://example.com/dropdown"); // Replace with your target URL
+        
+        // Locate the dropdown and select an option by visible text
+        Select dropdown = new Select(driver.findElement(By.id("dropdownMenu")));
+        dropdown.selectByVisibleText("Option 2");
+        
+        Thread.sleep(1000);
+        String selectedOption = dropdown.getFirstSelectedOption().getText();
+        if ("Option 2".equals(selectedOption)) {
+            System.out.println("Dropdown option selected successfully.");
+        } else {
+            System.out.println("Dropdown selection failed!");
+        }
+        driver.quit();
+    }
+}
