@@ -81,3 +81,23 @@ public class PrimeCheck {
         System.out.println(isPrime(10)); // false
     }
 }
+
+//remove duplicate from array
+
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+
+public class RemoveDuplicates {
+    public static int[] removeDuplicates(int[] arr) {
+        LinkedHashSet<Integer> set = new LinkedHashSet<>();
+        for (int num : arr) {
+            set.add(num);
+        }
+        return set.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 2, 3, 4, 4, 5};
+        System.out.println(Arrays.toString(removeDuplicates(numbers))); // [1, 2, 3, 4, 5]
+    }
+}
