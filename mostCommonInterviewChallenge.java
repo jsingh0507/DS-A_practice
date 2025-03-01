@@ -20,3 +20,14 @@ public class Factorial {
         System.out.println(factorial(5)); // 120
     }
 }
+
+//Fibionacci sequence (recursion)
+public class Fibonacci {
+    public static int fibonacci(int n) {
+        return (n <= 1) ? n : fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(fibonacci(6)); // 8
+    }
+}
