@@ -31,3 +31,19 @@ public class Fibonacci {
         System.out.println(fibonacci(6)); // 8
     }
 }
+
+//Reverse a string 
+public class ReverseInteger {
+    public static int reverse(int num) {
+        int reversed = 0;
+        while (num != 0) {
+            reversed = reversed * 10 + num % 10;
+            num /= 10;
+        }
+        return reversed;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(reverse(1234)); // 4321
+    }
+}
