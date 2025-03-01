@@ -47,3 +47,21 @@ public class ReverseInteger {
         System.out.println(reverse(1234)); // 4321
     }
 }
+
+//Largest in an Array 
+public class LargestInArray {
+    public static int findLargest(int[] arr) {
+        int max = arr[0];
+        for (int num : arr) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        return max;
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {10, 5, 8, 20, 15};
+        System.out.println(findLargest(numbers)); // 20
+    }
+}
