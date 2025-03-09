@@ -270,3 +270,42 @@ public class LinkedListCycle {
         System.out.println("Has Cycle: " + hasCycle(head)); // true
     }
 }
+
+// Merge sort 
+
+public class MergeSortedArrays {
+    public static int[] mergeArrays(int[] arr1, int[] arr2) {
+        int m = arr1.length, n = arr2.length;
+        int[] mergedArray = new int[m + n];
+
+        int i = 0, j = 0, k = 0;
+
+        // Merge both arrays in sorted order
+        while (i < m && j < n) {
+            if (arr1[i] < arr2[j]) {
+                mergedArray[k++] = arr1[i++];
+            } else {
+                mergedArray[k++] = arr2[j++];
+            }
+        }
+
+        // Copy remaining elements from arr1
+        while (i < m) {
+            mergedArray[k++] = arr1[i++];
+        }
+
+        // Copy remaining elements from arr2
+        while (j < n) {
+            mergedArray[k++] = arr2[j++];
+        }
+
+        return mergedArray;
+    }
+
+    public static void main(String[] args) {
+        int[] arr1 = {1, 3, 5, 7};
+        int[] arr2 = {2, 4, 6, 8};
+        System.out.println("Merged Sorted Array: " + Arrays.toString(mergeArrays(arr1, arr2)));
+        // Output: [1, 2, 3, 4, 5, 6, 7, 8]
+    }
+}
