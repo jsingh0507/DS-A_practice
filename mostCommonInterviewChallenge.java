@@ -231,3 +231,42 @@ public class LongestCommonPrefix {
         System.out.println("Longest Common Prefix: " + findPrefix(words)); // "fl"
     }
 }
+
+// Linked List ex
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int x) {
+        val = x;
+        next = null;
+    }
+}
+
+public class LinkedListCycle {
+    public static boolean hasCycle(ListNode head) {
+        if (head == null) return false;
+
+        ListNode slow = head;
+        ListNode fast = head;
+
+        // Move fast pointer twice as fast as slow
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                return true; // Loop detected
+            }
+        }
+        return false; // No cycle
+    }
+
+    public static void main(String[] args) {
+        // Example: Create a linked list with a cycle
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = head.next; // Creates a cycle
+
+        System.out.println("Has Cycle: " + hasCycle(head)); // true
+    }
+}
