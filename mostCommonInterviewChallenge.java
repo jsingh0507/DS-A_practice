@@ -159,3 +159,27 @@ public class ArrayIntersection {
         System.out.println("Intersection: " + Arrays.toString(findIntersection(arr1, arr2))); // [3, 4, 5]
     }
 }
+
+// First non repeating character
+public class FirstNonRepeatingChar {
+    public static char firstUniqueChar(String str) {
+        Map<Character, Integer> countMap = new LinkedHashMap<>();
+
+        // Count occurrences of each character
+        for (char ch : str.toCharArray()) {
+            countMap.put(ch, countMap.getOrDefault(ch, 0) + 1);
+        }
+
+        // Find the first non-repeating character
+        for (Map.Entry<Character, Integer> entry : countMap.entrySet()) {
+            if (entry.getValue() == 1) {
+                return entry.getKey();
+            }
+        }
+        return '_'; // If no unique character found
+    }
+
+    public static void main(String[] args) {
+        System.out.println("First non-repeating character: " + firstUniqueChar("swiss")); // 'w'
+    }
+}
