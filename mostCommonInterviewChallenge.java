@@ -131,3 +131,31 @@ public class SwapVariables {
     }
 }
 
+// Array intersection
+
+public class ArrayIntersection {
+    public static int[] findIntersection(int[] arr1, int[] arr2) {
+        HashSet<Integer> set1 = new HashSet<>();
+        HashSet<Integer> intersection = new HashSet<>();
+
+        // Add all elements of arr1 to set1
+        for (int num : arr1) {
+            set1.add(num);
+        }
+
+        // Check which elements of arr2 exist in set1
+        for (int num : arr2) {
+            if (set1.contains(num)) {
+                intersection.add(num);
+            }
+        }
+
+        return intersection.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3, 4, 5};
+        int[] arr2 = {3, 4, 5, 6, 7};
+        System.out.println("Intersection: " + Arrays.toString(findIntersection(arr1, arr2))); // [3, 4, 5]
+    }
+}
