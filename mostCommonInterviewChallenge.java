@@ -209,3 +209,25 @@ public class BinarySearch {
         System.out.println("Index of 4: " + binarySearch(numbers, 4)); // -1
     }
 }
+
+//Longest common prefix 
+public class LongestCommonPrefix {
+    public static String findPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) return "";
+
+        String prefix = strs[0]; // Start with the first string
+
+        for (int i = 1; i < strs.length; i++) {
+            while (strs[i].indexOf(prefix) != 0) {
+                prefix = prefix.substring(0, prefix.length() - 1); // Reduce prefix
+                if (prefix.isEmpty()) return "";
+            }
+        }
+        return prefix;
+    }
+
+    public static void main(String[] args) {
+        String[] words = {"flower", "flow", "flight"};
+        System.out.println("Longest Common Prefix: " + findPrefix(words)); // "fl"
+    }
+}
