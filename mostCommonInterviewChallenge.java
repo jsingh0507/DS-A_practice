@@ -387,3 +387,29 @@ public class FirstRepeatingElement {
         System.out.println("First Repeating Element: " + findFirstRepeating(arr)); // 3
     }
 }
+
+import java.util.HashSet;
+
+public class FindAllDuplicates {
+    public static void findDuplicates(int[] arr) {
+        HashSet<Integer> seen = new HashSet<>();
+        HashSet<Integer> duplicates = new HashSet<>();
+
+        for (int num : arr) {
+            if (!seen.add(num)) {
+                duplicates.add(num);
+            }
+        }
+
+        if (duplicates.isEmpty()) {
+            System.out.println("No duplicates found.");
+        } else {
+            System.out.println("Duplicates: " + duplicates);
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 3, 4, 2, 3, 1, 5};
+        findDuplicates(arr); // [1, 3]
+    }
+}
