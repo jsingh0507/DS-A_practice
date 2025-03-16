@@ -349,3 +349,23 @@ public class CheckSortedArray {
         System.out.println(isSorted(arr2)); // false
     }
 }
+
+import java.util.HashSet;
+
+public class FindPairsWithSum {
+    public static void findPairs(int[] arr, int target) {
+        HashSet<Integer> set = new HashSet<>();
+        for (int num : arr) {
+            int complement = target - num;
+            if (set.contains(complement)) {
+                System.out.println("(" + complement + ", " + num + ")");
+            }
+            set.add(num);
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 4, 6, 2, 3, 5};
+        findPairs(arr, 7); // (4,3), (6,1), (5,2)
+    }
+}
