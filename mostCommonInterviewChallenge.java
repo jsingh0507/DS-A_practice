@@ -369,3 +369,21 @@ public class FindPairsWithSum {
         findPairs(arr, 7); // (4,3), (6,1), (5,2)
     }
 }
+
+import java.util.HashSet;
+
+public class FirstRepeatingElement {
+    public static int findFirstRepeating(int[] arr) {
+        HashSet<Integer> seen = new HashSet<>();
+        for (int num : arr) {
+            if (seen.contains(num)) return num;
+            seen.add(num);
+        }
+        return -1; // Return -1 if no repeating element found
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {10, 5, 3, 4, 3, 5, 6};
+        System.out.println("First Repeating Element: " + findFirstRepeating(arr)); // 3
+    }
+}
