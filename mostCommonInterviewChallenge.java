@@ -468,3 +468,29 @@ public class ArmstrongNumber {
         System.out.println(isArmstrong(123)); // false
     }
 }
+
+
+import java.util.HashMap;
+
+public class MaxCharFrequency {
+    public static char getMaxChar(String str) {
+        HashMap<Character, Integer> freq = new HashMap<>();
+        for (char ch : str.toCharArray()) {
+            freq.put(ch, freq.getOrDefault(ch, 0) + 1);
+        }
+
+        char maxChar = ' ';
+        int max = 0;
+        for (char ch : freq.keySet()) {
+            if (freq.get(ch) > max) {
+                max = freq.get(ch);
+                maxChar = ch;
+            }
+        }
+        return maxChar;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Max occurring char: " + getMaxChar("aabccccddbbb")); // b
+    }
+}
