@@ -509,3 +509,22 @@ public class PerfectNumber {
         System.out.println(isPerfect(12)); // false
     }
 }
+
+public class OnlyDigitsCheck {
+    public static boolean containsOnlyDigits(String str) {
+        for (char ch : str.toCharArray()) {
+            if (!Character.isDigit(ch)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        String input1 = "123456";
+        String input2 = "123a56";
+
+        System.out.println(input1 + " contains only digits? " + containsOnlyDigits(input1)); // true
+        System.out.println(input2 + " contains only digits? " + containsOnlyDigits(input2)); // false
+    }
+}
