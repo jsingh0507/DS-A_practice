@@ -413,3 +413,21 @@ public class FindAllDuplicates {
         findDuplicates(arr); // [1, 3]
     }
 }
+
+public class CountVowels {
+    public static int countVowels(String str) {
+        int count = 0;
+        str = str.toLowerCase();
+        for (char ch : str.toCharArray()) {
+            if ("aeiou".indexOf(ch) != -1) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        String input = "Interview Prep";
+        System.out.println("Vowel Count: " + countVowels(input)); // Output: 5
+    }
+}
