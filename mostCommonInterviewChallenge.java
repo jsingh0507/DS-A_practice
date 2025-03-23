@@ -448,3 +448,23 @@ public class FibonacciSeries {
         printFibonacci(10); // 0 1 1 2 3 5 8 13 21 34
     }
 }
+
+public class ArmstrongNumber {
+    public static boolean isArmstrong(int num) {
+        int original = num, sum = 0;
+        int digits = String.valueOf(num).length();
+
+        while (num > 0) {
+            int digit = num % 10;
+            sum += Math.pow(digit, digits);
+            num /= 10;
+        }
+
+        return sum == original;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isArmstrong(153)); // true
+        System.out.println(isArmstrong(123)); // false
+    }
+}
