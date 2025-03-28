@@ -543,3 +543,14 @@ public class SumOfDigits {
         System.out.println("Sum of digits: " + sumDigits(1234)); // 10
     }
 }
+
+public class EvenOddCheck {
+    public static String checkEvenOdd(int num) {
+        return (num & 1) == 0 ? "Even" : "Odd";
+    }
+
+    public static void main(String[] args) {
+        System.out.println("5 is " + checkEvenOdd(5)); // Odd
+        System.out.println("10 is " + checkEvenOdd(10)); // Even
+    }
+}
