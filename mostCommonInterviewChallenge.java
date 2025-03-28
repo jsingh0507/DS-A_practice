@@ -617,3 +617,25 @@ public class LongestWordLength {
         System.out.println("Longest word length: " + longestWordLength(sentence)); // 8
     }
 }
+
+public class CapitalizeWords {
+    public static String capitalizeEachWord(String sentence) {
+        String[] words = sentence.toLowerCase().split(" ");
+        StringBuilder sb = new StringBuilder();
+
+        for (String word : words) {
+            if (word.length() > 0) {
+                sb.append(Character.toUpperCase(word.charAt(0)))
+                  .append(word.substring(1))
+                  .append(" ");
+            }
+        }
+
+        return sb.toString().trim();
+    }
+
+    public static void main(String[] args) {
+        String input = "java is fun";
+        System.out.println("Capitalized: " + capitalizeEachWord(input)); // "Java Is Fun"
+    }
+}
