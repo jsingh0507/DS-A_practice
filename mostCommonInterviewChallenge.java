@@ -567,3 +567,21 @@ public class WordCount {
         System.out.println("Word count: " + countWords(sentence)); // 6
     }
 }
+
+public class ReverseEachWord {
+    public static String reverseWords(String sentence) {
+        String[] words = sentence.split(" ");
+        StringBuilder result = new StringBuilder();
+
+        for (String word : words) {
+            result.append(new StringBuilder(word).reverse().toString()).append(" ");
+        }
+
+        return result.toString().trim();
+    }
+
+    public static void main(String[] args) {
+        String input = "hello world java";
+        System.out.println("Reversed: " + reverseWords(input)); // "olleh dlrow avaj"
+    }
+}
