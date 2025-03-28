@@ -585,3 +585,17 @@ public class ReverseEachWord {
         System.out.println("Reversed: " + reverseWords(input)); // "olleh dlrow avaj"
     }
 }
+
+public class StringToInt {
+    public static int stringToInt(String str) {
+        int num = 0;
+        for (char ch : str.toCharArray()) {
+            num = num * 10 + (ch - '0');
+        }
+        return num;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Converted: " + stringToInt("1234")); // 1234
+    }
+}
