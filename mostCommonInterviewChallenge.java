@@ -554,3 +554,16 @@ public class EvenOddCheck {
         System.out.println("10 is " + checkEvenOdd(10)); // Even
     }
 }
+
+public class WordCount {
+    public static int countWords(String str) {
+        if (str == null || str.isEmpty()) return 0;
+        String[] words = str.trim().split("\\s+");
+        return words.length;
+    }
+
+    public static void main(String[] args) {
+        String sentence = "Java is an object oriented language";
+        System.out.println("Word count: " + countWords(sentence)); // 6
+    }
+}
