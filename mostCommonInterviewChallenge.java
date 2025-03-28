@@ -599,3 +599,21 @@ public class StringToInt {
         System.out.println("Converted: " + stringToInt("1234")); // 1234
     }
 }
+
+public class LongestWordLength {
+    public static int longestWordLength(String sentence) {
+        String[] words = sentence.split(" ");
+        int maxLen = 0;
+        for (String word : words) {
+            if (word.length() > maxLen) {
+                maxLen = word.length();
+            }
+        }
+        return maxLen;
+    }
+
+    public static void main(String[] args) {
+        String sentence = "Java is powerful and elegant";
+        System.out.println("Longest word length: " + longestWordLength(sentence)); // 8
+    }
+}
