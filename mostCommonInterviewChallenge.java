@@ -639,3 +639,13 @@ public class CapitalizeWords {
         System.out.println("Capitalized: " + capitalizeEachWord(input)); // "Java Is Fun"
     }
 }
+public class RemoveSpaces {
+    public static String removeSpaces(String str) {
+        return str.replaceAll("\\s+", "");
+    }
+
+    public static void main(String[] args) {
+        String input = " Java   is   awesome ";
+        System.out.println("Without spaces: " + removeSpaces(input)); // "Javaisawesome"
+    }
+}
