@@ -649,3 +649,24 @@ public class RemoveSpaces {
         System.out.println("Without spaces: " + removeSpaces(input)); // "Javaisawesome"
     }
 }
+
+import java.util.HashMap;
+
+public class WordFrequency {
+    public static void countWords(String sentence) {
+        String[] words = sentence.toLowerCase().split("\\s+");
+        HashMap<String, Integer> freqMap = new HashMap<>();
+
+        for (String word : words) {
+            freqMap.put(word, freqMap.getOrDefault(word, 0) + 1);
+        }
+
+        System.out.println("Word Frequencies: " + freqMap);
+    }
+
+    public static void main(String[] args) {
+        String text = "Java is great and Java is fast";
+        countWords(text);
+        // Output: {java=2, is=2, great=1, and=1, fast=1}
+    }
+}
