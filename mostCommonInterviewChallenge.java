@@ -699,3 +699,24 @@ public class DigitCounter {
         System.out.println("Number of digits: " + countDigits(987654)); // 6
     }
 }
+
+import java.util.Arrays;
+
+public class MinMaxInArray {
+    public static void findMinMax(int[] arr) {
+        int min = arr[0];
+        int max = arr[0];
+
+        for (int num : arr) {
+            if (num < min) min = num;
+            if (num > max) max = num;
+        }
+
+        System.out.println("Min: " + min + ", Max: " + max);
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {45, 2, 9, 18, 91, 3};
+        findMinMax(numbers); // Min: 2, Max: 91
+    }
+}
