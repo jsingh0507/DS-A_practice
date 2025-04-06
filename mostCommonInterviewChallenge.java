@@ -670,3 +670,17 @@ public class WordFrequency {
         // Output: {java=2, is=2, great=1, and=1, fast=1}
     }
 }
+
+public class PowerCalculation {
+    public static int power(int base, int exponent) {
+        int result = 1;
+        for (int i = 1; i <= exponent; i++) {
+            result *= base;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("2^5 = " + power(2, 5)); // 32
+    }
+}
