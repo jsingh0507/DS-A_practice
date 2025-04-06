@@ -720,3 +720,22 @@ public class MinMaxInArray {
         findMinMax(numbers); // Min: 2, Max: 91
     }
 }
+
+public class PalindromeNumber {
+    public static boolean isPalindrome(int num) {
+        int original = num;
+        int reversed = 0;
+
+        while (num > 0) {
+            reversed = reversed * 10 + num % 10;
+            num /= 10;
+        }
+
+        return original == reversed;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("121 is palindrome? " + isPalindrome(121)); // true
+        System.out.println("123 is palindrome? " + isPalindrome(123)); // false
+    }
+}
