@@ -684,3 +684,18 @@ public class PowerCalculation {
         System.out.println("2^5 = " + power(2, 5)); // 32
     }
 }
+
+public class DigitCounter {
+    public static int countDigits(int number) {
+        int count = 0;
+        while (number != 0) {
+            number /= 10;
+            count++;
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Number of digits: " + countDigits(987654)); // 6
+    }
+}
