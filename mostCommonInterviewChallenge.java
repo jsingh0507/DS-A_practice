@@ -739,3 +739,25 @@ public class PalindromeNumber {
         System.out.println("123 is palindrome? " + isPalindrome(123)); // false
     }
 }
+
+import java.util.HashSet;
+
+public class FirstDuplicate {
+    public static int findFirstDuplicate(int[] arr) {
+        HashSet<Integer> seen = new HashSet<>();
+
+        for (int num : arr) {
+            if (seen.contains(num)) {
+                return num; // First duplicate found
+            }
+            seen.add(num);
+        }
+
+        return -1; // No duplicates found
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {3, 5, 4, 2, 3, 6, 7};
+        System.out.println("First duplicate: " + findFirstDuplicate(numbers)); // 3
+    }
+}
