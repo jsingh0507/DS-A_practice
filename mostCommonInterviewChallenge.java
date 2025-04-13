@@ -832,3 +832,25 @@ public class RemoveDuplicateChars {
         System.out.println(removeDuplicates("programming")); // "progamin"
     }
 }
+
+public class SecondSmallest {
+    public static int findSecondSmallest(int[] arr) {
+        int first = Integer.MAX_VALUE, second = Integer.MAX_VALUE;
+
+        for (int num : arr) {
+            if (num < first) {
+                second = first;
+                first = num;
+            } else if (num < second && num != first) {
+                second = num;
+            }
+        }
+
+        return second;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {7, 3, 1, 4, 2};
+        System.out.println("Second smallest: " + findSecondSmallest(arr)); // 2
+    }
+}
