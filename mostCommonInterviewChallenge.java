@@ -812,3 +812,23 @@ public class SwapStrings {
         System.out.println("b: " + b); // Hello
     }
 }
+
+public class RemoveDuplicateChars {
+    public static String removeDuplicates(String str) {
+        StringBuilder sb = new StringBuilder();
+        boolean[] seen = new boolean[256]; // ASCII size
+
+        for (char ch : str.toCharArray()) {
+            if (!seen[ch]) {
+                sb.append(ch);
+                seen[ch] = true;
+            }
+        }
+
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(removeDuplicates("programming")); // "progamin"
+    }
+}
