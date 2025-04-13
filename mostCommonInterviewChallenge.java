@@ -854,3 +854,25 @@ public class SecondSmallest {
         System.out.println("Second smallest: " + findSecondSmallest(arr)); // 2
     }
 }
+
+
+import java.util.HashSet;
+
+public class MissingCharacters {
+    public static void printMissing(String str1, String str2) {
+        HashSet<Character> set = new HashSet<>();
+        for (char ch : str2.toCharArray()) {
+            set.add(ch);
+        }
+
+        for (char ch : str1.toCharArray()) {
+            if (!set.contains(ch)) {
+                System.out.print(ch + " ");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        printMissing("abcdefg", "abc"); // Output: d e f g
+    }
+}
