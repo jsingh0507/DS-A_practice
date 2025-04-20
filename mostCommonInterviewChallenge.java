@@ -950,3 +950,13 @@ public class VowelConsonantCount {
         count("Java Programming"); // Vowels: 5, Consonants: 9
     }
 }
+
+public class DecimalToBinary {
+    public static String convertToBinary(int number) {
+        return Integer.toBinaryString(number);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Binary of 25: " + convertToBinary(25)); // 11001
+    }
+}
