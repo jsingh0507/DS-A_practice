@@ -905,3 +905,24 @@ public class LeapYear {
         System.out.println("2100 is leap year? " + isLeapYear(2100)); // false
     }
 }
+
+import java.util.Arrays;
+
+public class ReverseArray {
+    public static void reverse(int[] arr) {
+        int left = 0, right = arr.length - 1;
+        while (left < right) {
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
+            right--;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5};
+        reverse(numbers);
+        System.out.println("Reversed array: " + Arrays.toString(numbers)); // [5, 4, 3, 2, 1]
+    }
+}
