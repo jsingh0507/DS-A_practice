@@ -970,3 +970,15 @@ public class BinaryToDecimal {
         System.out.println("Decimal of 11001: " + convertToDecimal("11001")); // 25
     }
 }
+
+
+public class ReplaceSpaces {
+    public static String replaceSpaces(String str) {
+        return str.trim().replaceAll("\\s+", "-");
+    }
+
+    public static void main(String[] args) {
+        String input = "  Java is awesome  ";
+        System.out.println("Updated string: " + replaceSpaces(input)); // "Java-is-awesome"
+    }
+}
