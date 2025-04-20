@@ -960,3 +960,13 @@ public class DecimalToBinary {
         System.out.println("Binary of 25: " + convertToBinary(25)); // 11001
     }
 }
+
+public class BinaryToDecimal {
+    public static int convertToDecimal(String binary) {
+        return Integer.parseInt(binary, 2);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Decimal of 11001: " + convertToDecimal("11001")); // 25
+    }
+}
