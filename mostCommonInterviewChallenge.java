@@ -876,3 +876,21 @@ public class MissingCharacters {
         printMissing("abcdefg", "abc"); // Output: d e f g
     }
 }
+
+
+public class SumEvenNumbers {
+    public static int sumEven(int[] arr) {
+        int sum = 0;
+        for (int num : arr) {
+            if (num % 2 == 0) {
+                sum += num;
+            }
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 5, 8, 9, 12};
+        System.out.println("Sum of even numbers: " + sumEven(nums)); // 22
+    }
+}
