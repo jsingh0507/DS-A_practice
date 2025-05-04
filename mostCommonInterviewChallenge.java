@@ -1034,3 +1034,24 @@ public class CharTypeCount {
         countTypes("Java123@#2024");
     }
 }
+
+public class PalindromeWords {
+    public static void findPalindromes(String sentence) {
+        String[] words = sentence.toLowerCase().split("\\s+");
+
+        System.out.println("Palindromes in sentence:");
+        for (String word : words) {
+            if (isPalindrome(word)) {
+                System.out.println(word);
+            }
+        }
+    }
+
+    private static boolean isPalindrome(String word) {
+        return word.equals(new StringBuilder(word).reverse().toString());
+    }
+
+    public static void main(String[] args) {
+        findPalindromes("Madam racecar level java pop");
+    }
+}
