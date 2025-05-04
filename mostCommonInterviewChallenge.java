@@ -1074,3 +1074,28 @@ public class GCDArray {
         System.out.println("GCD of array: " + findGCD(numbers)); // 12
     }
 }
+
+public class FirstNonRepeatedChar {
+    public static char firstNonRepeated(String str) {
+        Map<Character, Integer> countMap = new LinkedHashMap<>();
+
+        // Count frequency of each character
+        for (char ch : str.toCharArray()) {
+            countMap.put(ch, countMap.getOrDefault(ch, 0) + 1);
+        }
+
+        // Return the first character with count 1
+        for (Map.Entry<Character, Integer> entry : countMap.entrySet()) {
+            if (entry.getValue() == 1) {
+                return entry.getKey();
+            }
+        }
+
+        return '_'; // Indicates no unique character found
+    }
+
+    public static void main(String[] args) {
+        String input = "swiss";
+        System.out.println("First non-repeated character: " + firstNonRepeated(input)); // Output: w
+    }
+}
