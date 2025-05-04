@@ -982,3 +982,20 @@ public class ReplaceSpaces {
         System.out.println("Updated string: " + replaceSpaces(input)); // "Java-is-awesome"
     }
 }
+
+public class EqualArrays {
+    public static boolean areEqual(int[] arr1, int[] arr2) {
+        if (arr1.length != arr2.length) return false;
+
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+
+        return Arrays.equals(arr1, arr2);
+    }
+
+    public static void main(String[] args) {
+        int[] a = {1, 2, 3, 4};
+        int[] b = {4, 3, 2, 1};
+        System.out.println("Arrays equal? " + areEqual(a, b)); // true
+    }
+}
