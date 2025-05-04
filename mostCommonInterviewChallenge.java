@@ -1055,3 +1055,22 @@ public class PalindromeWords {
         findPalindromes("Madam racecar level java pop");
     }
 }
+
+public class GCDArray {
+    public static int findGCD(int[] arr) {
+        int result = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            result = gcd(result, arr[i]);
+        }
+        return result;
+    }
+
+    private static int gcd(int a, int b) {
+        return (b == 0) ? a : gcd(b, a % b);
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {24, 60, 36};
+        System.out.println("GCD of array: " + findGCD(numbers)); // 12
+    }
+}
