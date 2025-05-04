@@ -1014,3 +1014,23 @@ public class StarPattern {
         printTriangle(5);
     }
 }
+
+public class CharTypeCount {
+    public static void countTypes(String str) {
+        int digits = 0, letters = 0, specials = 0;
+
+        for (char ch : str.toCharArray()) {
+            if (Character.isDigit(ch)) digits++;
+            else if (Character.isLetter(ch)) letters++;
+            else specials++;
+        }
+
+        System.out.println("Letters: " + letters);
+        System.out.println("Digits: " + digits);
+        System.out.println("Specials: " + specials);
+    }
+
+    public static void main(String[] args) {
+        countTypes("Java123@#2024");
+    }
+}
