@@ -1172,3 +1172,18 @@ public class WordsEndingInVowel {
         System.out.println("Words ending in vowel: " + countWordsEndingInVowel(sentence)); // 3
     }
 }
+public class SumOfSquares {
+    public static int sumSquares(int num) {
+        int sum = 0;
+        while (num != 0) {
+            int digit = num % 10;
+            sum += digit * digit;
+            num /= 10;
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Sum of squares: " + sumSquares(123)); // 14
+    }
+}
