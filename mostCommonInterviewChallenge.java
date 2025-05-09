@@ -1187,3 +1187,20 @@ public class SumOfSquares {
         System.out.println("Sum of squares: " + sumSquares(123)); // 14
     }
 }
+public class RightAlignedTriangle {
+    public static void printRightAligned(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int space = 1; space <= n - i; space++) {
+                System.out.print(" ");
+            }
+            for (int star = 1; star <= i; star++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        printRightAligned(5);
+    }
+}
