@@ -1150,3 +1150,25 @@ public class CommonElements {
         findCommon(a, b); // 3 5
     }
 }
+public class WordsEndingInVowel {
+    public static int countWordsEndingInVowel(String sentence) {
+        String[] words = sentence.toLowerCase().split("\\s+");
+        int count = 0;
+
+        for (String word : words) {
+            if (!word.isEmpty()) {
+                char lastChar = word.charAt(word.length() - 1);
+                if ("aeiou".indexOf(lastChar) != -1) {
+                    count++;
+                }
+            }
+        }
+
+        return count;
+    }
+
+    public static void main(String[] args) {
+        String sentence = "Hello I am a software engineer";
+        System.out.println("Words ending in vowel: " + countWordsEndingInVowel(sentence)); // 3
+    }
+}
