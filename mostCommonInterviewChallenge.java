@@ -1131,3 +1131,22 @@ public class ProductOfArray {
         System.out.println("Product: " + product(nums)); // 24
     }
 }
+public class CommonElements {
+    public static void findCommon(int[] arr1, int[] arr2) {
+        HashSet<Integer> set = new HashSet<>();
+        for (int num : arr1) set.add(num);
+
+        System.out.print("Common elements: ");
+        for (int num : arr2) {
+            if (set.contains(num)) {
+                System.out.print(num + " ");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] a = {1, 3, 4, 5};
+        int[] b = {2, 3, 5, 6};
+        findCommon(a, b); // 3 5
+    }
+}
