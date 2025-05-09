@@ -1117,3 +1117,17 @@ public class FibonacciArray {
         System.out.println("Fibonacci: " + Arrays.toString(generateFibonacci(10)));
     }
 }
+public class ProductOfArray {
+    public static int product(int[] arr) {
+        int result = 1;
+        for (int num : arr) {
+            result *= num;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 3, 4};
+        System.out.println("Product: " + product(nums)); // 24
+    }
+}
