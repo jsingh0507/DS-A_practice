@@ -1099,3 +1099,21 @@ public class FirstNonRepeatedChar {
         System.out.println("First non-repeated character: " + firstNonRepeated(input)); // Output: w
     }
 }
+
+public class FibonacciArray {
+    public static int[] generateFibonacci(int n) {
+        int[] fib = new int[n];
+        if (n >= 1) fib[0] = 0;
+        if (n >= 2) fib[1] = 1;
+
+        for (int i = 2; i < n; i++) {
+            fib[i] = fib[i - 1] + fib[i - 2];
+        }
+
+        return fib;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Fibonacci: " + Arrays.toString(generateFibonacci(10)));
+    }
+}
