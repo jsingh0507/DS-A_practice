@@ -1235,3 +1235,15 @@ public class LargestWord {
         System.out.println("Largest word: " + findLargest("Java is beautiful and powerful")); // beautiful
     }
 }
+
+public class PerfectSquare {
+    public static boolean isPerfectSquare(int num) {
+        int sqrt = (int) Math.sqrt(num);
+        return sqrt * sqrt == num;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("16 is perfect square? " + isPerfectSquare(16)); // true
+        System.out.println("20 is perfect square? " + isPerfectSquare(20)); // false
+    }
+}
