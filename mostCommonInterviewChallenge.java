@@ -1297,3 +1297,27 @@ public class CharacterCount {
         System.out.println("Count of 'a': " + countChar("Java programming", 'a')); // 3
     }
 }
+
+public class PangramCheck {
+    public static boolean isPangram(String str) {
+        str = str.toLowerCase();
+        boolean[] letters = new boolean[26];
+
+        for (char ch : str.toCharArray()) {
+            if (ch >= 'a' && ch <= 'z') {
+                letters[ch - 'a'] = true;
+            }
+        }
+
+        for (boolean present : letters) {
+            if (!present) return false;
+        }
+
+        return true;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isPangram("The quick brown fox jumps over a lazy dog")); // true
+        System.out.println(isPangram("Java is fun")); // false
+    }
+}
