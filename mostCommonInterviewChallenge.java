@@ -1204,3 +1204,16 @@ public class RightAlignedTriangle {
         printRightAligned(5);
     }
 }
+public class IterativeFactorial {
+    public static long factorial(int n) {
+        long fact = 1;
+        for (int i = 2; i <= n; i++) {
+            fact *= i;
+        }
+        return fact;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Factorial of 5: " + factorial(5)); // 120
+    }
+}
