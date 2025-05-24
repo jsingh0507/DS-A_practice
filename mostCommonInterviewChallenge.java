@@ -1247,3 +1247,24 @@ public class PerfectSquare {
         System.out.println("20 is perfect square? " + isPerfectSquare(20)); // false
     }
 }
+
+public class TitleCaseConverter {
+    public static String toTitleCase(String input) {
+        String[] words = input.toLowerCase().split("\\s+");
+        StringBuilder result = new StringBuilder();
+
+        for (String word : words) {
+            if (word.length() > 0) {
+                result.append(Character.toUpperCase(word.charAt(0)))
+                      .append(word.substring(1))
+                      .append(" ");
+            }
+        }
+
+        return result.toString().trim();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(toTitleCase("java is amazing")); // Java Is Amazing
+    }
+}
