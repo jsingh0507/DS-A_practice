@@ -1217,3 +1217,21 @@ public class IterativeFactorial {
         System.out.println("Factorial of 5: " + factorial(5)); // 120
     }
 }
+public class LargestWord {
+    public static String findLargest(String sentence) {
+        String[] words = sentence.split("\\s+");
+        String largest = "";
+
+        for (String word : words) {
+            if (word.length() > largest.length()) {
+                largest = word;
+            }
+        }
+
+        return largest;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Largest word: " + findLargest("Java is beautiful and powerful")); // beautiful
+    }
+}
