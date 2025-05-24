@@ -1283,3 +1283,17 @@ public class ReverseNumber {
         System.out.println("Reversed: " + reverse(1234)); // 4321
     }
 }
+
+public class CharacterCount {
+    public static int countChar(String str, char target) {
+        int count = 0;
+        for (char ch : str.toCharArray()) {
+            if (ch == target) count++;
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Count of 'a': " + countChar("Java programming", 'a')); // 3
+    }
+}
