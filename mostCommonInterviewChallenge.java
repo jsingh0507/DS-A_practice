@@ -1341,3 +1341,26 @@ public class CountEvenOddDigits {
         countDigits(123456); // Even: 3, Odd: 3
     }
 }
+
+import java.util.HashMap;
+
+public class DuplicateCharacters {
+    public static void printDuplicates(String str) {
+        HashMap<Character, Integer> countMap = new HashMap<>();
+
+        for (char ch : str.toCharArray()) {
+            countMap.put(ch, countMap.getOrDefault(ch, 0) + 1);
+        }
+
+        System.out.println("Duplicate characters:");
+        for (char ch : countMap.keySet()) {
+            if (countMap.get(ch) > 1) {
+                System.out.println(ch + " = " + countMap.get(ch));
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        printDuplicates("programming");
+    }
+}
