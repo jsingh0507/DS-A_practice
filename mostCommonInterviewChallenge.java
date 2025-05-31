@@ -1321,3 +1321,23 @@ public class PangramCheck {
         System.out.println(isPangram("Java is fun")); // false
     }
 }
+
+public class CountEvenOddDigits {
+    public static void countDigits(int num) {
+        int even = 0, odd = 0;
+
+        while (num != 0) {
+            int digit = num % 10;
+            if (digit % 2 == 0) even++;
+            else odd++;
+            num /= 10;
+        }
+
+        System.out.println("Even digits: " + even);
+        System.out.println("Odd digits: " + odd);
+    }
+
+    public static void main(String[] args) {
+        countDigits(123456); // Even: 3, Odd: 3
+    }
+}
