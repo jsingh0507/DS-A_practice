@@ -1405,3 +1405,21 @@ public class ToUpperCase {
         System.out.println("Result: " + convert("hello world")); // HELLO WORLD
     }
 }
+
+public class VowelOrConsonant {
+    public static void checkChar(char ch) {
+        ch = Character.toLowerCase(ch);
+        if (!Character.isLetter(ch)) {
+            System.out.println("Not a letter.");
+        } else if ("aeiou".indexOf(ch) != -1) {
+            System.out.println(ch + " is a vowel.");
+        } else {
+            System.out.println(ch + " is a consonant.");
+        }
+    }
+
+    public static void main(String[] args) {
+        checkChar('A'); // vowel
+        checkChar('z'); // consonant
+    }
+}
