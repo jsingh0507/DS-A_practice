@@ -1395,3 +1395,13 @@ public class PowerRecursive {
         System.out.println("2^5 = " + power(2, 5)); // 32
     }
 }
+
+public class ToUpperCase {
+    public static String convert(String str) {
+        return str.toUpperCase();
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Result: " + convert("hello world")); // HELLO WORLD
+    }
+}
