@@ -1364,3 +1364,23 @@ public class DuplicateCharacters {
         printDuplicates("programming");
     }
 }
+
+public class PrimeBetweenRange {
+    public static void printPrimes(int start, int end) {
+        for (int i = start; i <= end; i++) {
+            if (isPrime(i)) System.out.print(i + " ");
+        }
+    }
+
+    private static boolean isPrime(int n) {
+        if (n <= 1) return false;
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        printPrimes(10, 30); // 11 13 17 19 23 29
+    }
+}
