@@ -1423,3 +1423,15 @@ public class VowelOrConsonant {
         checkChar('z'); // consonant
     }
 }
+
+public class AsciiValue {
+    public static void printAscii(char ch) {
+        int ascii = (int) ch;
+        System.out.println("ASCII of '" + ch + "' is: " + ascii);
+    }
+
+    public static void main(String[] args) {
+        printAscii('A'); // 65
+        printAscii('z'); // 122
+    }
+}
