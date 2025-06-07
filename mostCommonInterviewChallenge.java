@@ -1482,3 +1482,19 @@ public class RemoveDigits {
         System.out.println(removeDigits("Java123is456fun")); // Javaisfun
     }
 }
+
+public class SumOfDigitsInString {
+    public static int sumDigits(String str) {
+        int sum = 0;
+        for (char ch : str.toCharArray()) {
+            if (Character.isDigit(ch)) {
+                sum += Character.getNumericValue(ch);
+            }
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Sum of digits: " + sumDigits("abc123xyz4")); // 10
+    }
+}
