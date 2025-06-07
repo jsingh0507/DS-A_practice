@@ -1462,3 +1462,13 @@ public class CountCapitals {
         System.out.println("Capital letters: " + countUpperCase("Java Is COOL")); // 5
     }
 }
+
+public class CircleArea {
+    public static double area(double radius) {
+        return Math.PI * radius * radius;
+    }
+
+    public static void main(String[] args) {
+        System.out.printf("Area of circle: %.2f\n", area(5)); // 78.54
+    }
+}
