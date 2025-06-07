@@ -1498,3 +1498,13 @@ public class SumOfDigitsInString {
         System.out.println("Sum of digits: " + sumDigits("abc123xyz4")); // 10
     }
 }
+
+public class TemperatureConverter {
+    public static double celsiusToFahrenheit(double celsius) {
+        return (celsius * 9 / 5) + 32;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("25°C = " + celsiusToFahrenheit(25) + "°F"); // 77.0°F
+    }
+}
