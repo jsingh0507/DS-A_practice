@@ -1448,3 +1448,17 @@ public class SwapWithoutTemp {
         System.out.println("After swap: a = " + a + ", b = " + b);
     }
 }
+
+public class CountCapitals {
+    public static int countUpperCase(String str) {
+        int count = 0;
+        for (char ch : str.toCharArray()) {
+            if (Character.isUpperCase(ch)) count++;
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Capital letters: " + countUpperCase("Java Is COOL")); // 5
+    }
+}
