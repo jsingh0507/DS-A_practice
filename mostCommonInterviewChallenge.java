@@ -1472,3 +1472,13 @@ public class CircleArea {
         System.out.printf("Area of circle: %.2f\n", area(5)); // 78.54
     }
 }
+
+public class RemoveDigits {
+    public static String removeDigits(String str) {
+        return str.replaceAll("\\d", "");
+    }
+
+    public static void main(String[] args) {
+        System.out.println(removeDigits("Java123is456fun")); // Javaisfun
+    }
+}
