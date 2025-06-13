@@ -1541,3 +1541,23 @@ public class AverageOfArray {
     }
 }
 
+public class DigitFrequency {
+    public static void countDigits(int num) {
+        int[] freq = new int[10];
+        while (num != 0) {
+            int digit = num % 10;
+            freq[digit]++;
+            num /= 10;
+        }
+
+        for (int i = 0; i < 10; i++) {
+            if (freq[i] > 0) {
+                System.out.println(i + " occurs " + freq[i] + " times");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        countDigits(1122334455);
+    }
+}
