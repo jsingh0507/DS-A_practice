@@ -1508,3 +1508,23 @@ public class TemperatureConverter {
         System.out.println("25°C = " + celsiusToFahrenheit(25) + "°F"); // 77.0°F
     }
 }
+
+public class ArmstrongCheck {
+    public static boolean isArmstrong(int num) {
+        int original = num;
+        int sum = 0;
+
+        while (num != 0) {
+            int digit = num % 10;
+            sum += digit * digit * digit;
+            num /= 10;
+        }
+
+        return sum == original;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("153 is Armstrong? " + isArmstrong(153)); // true
+        System.out.println("123 is Armstrong? " + isArmstrong(123)); // false
+    }
+}
