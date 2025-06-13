@@ -1561,3 +1561,13 @@ public class DigitFrequency {
         countDigits(1122334455);
     }
 }
+
+public class RemoveVowels {
+    public static String removeVowels(String str) {
+        return str.replaceAll("(?i)[aeiou]", "");
+    }
+
+    public static void main(String[] args) {
+        System.out.println(removeVowels("Java is Awesome")); // Jv s wsm
+    }
+}
